@@ -1,0 +1,53 @@
+# Core Deep Learning Framework
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+
+# Vision Transformer & Model Zoo
+timm==0.9.12
+transformers==4.35.2
+
+# Data Processing & Augmentation
+albumentations==1.3.1
+opencv-python==4.8.1.78
+Pillow==10.1.0
+numpy==1.24.3
+scipy==1.11.4
+
+# Numerical & Scientific Computing
+scikit-learn==1.3.2
+pandas==2.1.3
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# PyTorch Utilities
+pytorch-lightning==2.1.2
+
+# Optimization & Scheduling
+optuna==3.14.0
+
+# Monitoring & Logging
+tensorboard==2.15.1
+wandb==0.16.1
+
+# Utilities
+tqdm==4.66.1
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# Development & Testing
+pytest==7.4.3
+black==23.12.0
+flake8==6.1.0
+isort==5.13.2
+
+# GPU Acceleration (Optional - for NVIDIA CUDA)
+# Uncomment if using CUDA:
+# torch-cuda==11.8  # or your specific CUDA version
+# apex==0.1  # For mixed precision training
+
+# Jupyter & Notebooks (Optional)
+jupyter==1.0.0
+jupyterlab==4.0.9
+ipython==8.18.1
+ipywidgets==8.1.1
