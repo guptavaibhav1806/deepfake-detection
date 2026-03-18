@@ -118,7 +118,7 @@ def load_model(weights_path: str, device: torch.device) -> nn.Module:
 
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-WEIGHTS_PATH = os.getenv("WEIGHTS_PATH", "vit_final_full_good_SE+DUAL_SCALE_4_epochs.pth")
+WEIGHTS_PATH = os.getenv("WEIGHTS_PATH", "vit_final_full_good_SE+DUAL_SCALE_5_epochs.pth")
 PREPROCESS = build_preprocess()
 MODEL = load_model(WEIGHTS_PATH, DEVICE)
 
