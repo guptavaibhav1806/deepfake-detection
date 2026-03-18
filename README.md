@@ -327,6 +327,67 @@ Input Image (224×224)
    model = nn.DataParallel(model)
    ```
 
+## Gradio App (app.py) — Run Inference on a Single Image
+
+This repo also includes a minimal Gradio app to load your trained weights (`.pth`) and make **single-image** predictions.
+
+### Files
+
+- `app.py`: defines the ViT dual-scale + SE model, loads weights, preprocesses images, and launches Gradio
+- `requirements.txt`: dependencies for local run / Hugging Face Spaces
+
+### Image preprocessing (matches training `val_transforms`)
+
+- Resize **224×224**
+- `PILToTensor()`
+- Convert to `float32` in \([0, 1]\)
+- Normalize with ImageNet stats:
+  - mean = `[0.485, 0.456, 0.406]`
+  - std  = `[0.229, 0.224, 0.225]`
+
+### Where to put the weights
+
+Copy your weights file next to `app.py`, for example:
+
+```
+deepfake-detection/
+  app.py
+  requirements.txt
+  vit_final_full_good_SE+DUAL_SCALE_5_epochs_changed.pth
+```
+
+Then set:
+
+- `WEIGHTS_PATH` = your weights filename
+
+### Run locally (Windows / PowerShell)
+
+```powershell
+cd "C:\Users\abc\Documents\deepfake-detector-space"
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+$env:WEIGHTS_PATH="vit_final_full_good_SE+DUAL_SCALE_6_epochs_changed.pth"
+python app.py
+```
+
+Open the URL printed in the terminal (usually `http://127.0.0.1:7860`).
+
+### Deploy to Hugging Face Spaces
+
+1. Create a new Space (Gradio).
+2. Upload/push:
+   - `app.py`
+   - `requirements.txt`
+   - your `.pth` file
+3. (Optional) In Space settings, set a variable:
+   - `WEIGHTS_PATH` = your weights filename
+
+
 ## 📚 References
 
 - 🔗 [FaceForensics++ Dataset](https://github.com/ondyari/FaceForensics) - Rössler et al., ICCV 2019
