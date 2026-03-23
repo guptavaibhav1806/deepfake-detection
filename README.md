@@ -3,7 +3,7 @@
 > A PyTorch-based deep learning model for detecting deepfakes in images and videos using Vision Transformers with advanced augmentation and dual-scale training techniques.
 
 🔗 **GitHub Repository**: [guptavaibhav1806/deepfake-detection](https://github.com/guptavaibhav1806/deepfake-detection)
-🔗 **Huggingface URL**: https://huggingface.co/spaces/Vaibhav1806/Deepfake_detection
+🔗 **Huggingface URL**: (https://huggingface.co/spaces/Vaibhav1806/Deepfake_detection).
 
 ## 🎯 Overview
 
